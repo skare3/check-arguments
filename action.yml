@@ -15,11 +15,11 @@ runs:
   steps:
   - name: Show Arguments
     shell: bash
-    run: echo ARGUMENTS (1) ${{ inputs.arguments }}
+    run: echo "ARGUMENTS (1) ${{ inputs.arguments }}"
   - name: Show Arguments
     shell: bash
     run: |
-      echo ARGUMENTS (2)
+      echo "ARGUMENTS (2)"
       echo "${{ toJson(github.event.client_payload) }}" > arguments.json
       cat arguments.json
       echo OK

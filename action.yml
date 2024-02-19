@@ -20,6 +20,8 @@ runs:
         echo '${{ inputs.arguments }}' > argument_spec.yml
         if [ "$RUNNER_OS" == "Windows" ]; then
           python $GITHUB_ACTION_PATH/action/main.py >> $GITHUB_OUTPUT
+          python $GITHUB_ACTION_PATH/action/main.py >> $GITHUB_STEP_SUMMARY
         else
           python3 $GITHUB_ACTION_PATH/action/main.py >> $GITHUB_OUTPUT
+          python3 $GITHUB_ACTION_PATH/action/main.py >> $GITHUB_STEP_SUMMARY
         fi

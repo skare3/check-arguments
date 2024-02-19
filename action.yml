@@ -25,3 +25,5 @@ runs:
           python3 $GITHUB_ACTION_PATH/action/main.py >> $GITHUB_STEP_SUMMARY
         fi
         echo "status=OK" >> $GITHUB_OUTPUT
+        echo $GITHUB_OUTPUT
+        cat $GITHUB_OUTPUT

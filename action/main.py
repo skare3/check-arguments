@@ -1,10 +1,10 @@
-import json
+import pprint
 import sys
 
 
 def main():
-    arguments = (' '.join((sys.argv[1:])))
-    print(arguments)
+    arguments = dict([arg.split(':') for arg in ' '.join((sys.argv[2:-1])).split(',')])
+    pprint.pprint(arguments)
 
 
 if __name__ == "__main__":

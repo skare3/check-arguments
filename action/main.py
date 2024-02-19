@@ -20,9 +20,9 @@ def main():
     unknown = [name for name in arguments if name not in argument_spec]
     if missing or unknown:
         if missing:
-            logging.error("Missing arguments:", missing)
+            logging.error(f"Missing arguments: {missing}")
         if unknown:
-            logging.error("Unknown arguments:", unknown)
+            logging.error(f"Unknown arguments: {unknown}")
         raise sys.exit(1)
 
     # if not required and default is not specified, then default is the empty string

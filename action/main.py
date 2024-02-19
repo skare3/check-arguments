@@ -43,7 +43,7 @@ def main():
         print(f'{key}="{value}"')
     
     with open(os.environ["GITHUB_OUTPUT"], "r+") as fh:
-        fh.write(f'arguments="{json.dumps(arguments)}"\n')
+        fh.write(f'arguments={json.dumps(arguments)}\n')
 
 
 if __name__ == "__main__":

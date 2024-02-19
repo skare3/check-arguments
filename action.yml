@@ -17,8 +17,9 @@ runs:
     shell: bash
     run: |
         echo '${{ toJson(github.event.client_payload) }}' > arguments.json
+        echo '${{ inputs.arguments }}' > argument_spec.yml
         if [ "$RUNNER_OS" == "Windows" ]; then
-          python $GITHUB_ACTION_PATH/action/main.py arguments.json
+          python $GITHUB_ACTION_PATH/action/main.py
         else
-          python3 $GITHUB_ACTION_PATH/action/main.py arguments.json
+          python3 $GITHUB_ACTION_PATH/action/main.py
         fi

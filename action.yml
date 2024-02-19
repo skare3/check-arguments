@@ -18,4 +18,6 @@ runs:
     run: echo ARGUMENTS ${{ inputs.arguments }}
   - name: Show Arguments
     shell: bash
-    run: echo ARGUMENTS 2"${{ toJson(github.event.client_payload) }}"
+    run: |
+      echo "${{ toJson(github.event.client_payload) }}" > arguments.json
+      cat arguments.json

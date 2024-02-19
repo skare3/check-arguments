@@ -2,6 +2,7 @@ import json
 import yaml
 import logging
 import sys
+import os
 
 
 def main():
@@ -40,6 +41,9 @@ def main():
 
     for key, value in arguments.items():
         print(f'{key}="{value}"')
+    
+    with open(os.environ["GITHUB_OUTPUT"], "r+") as fh:
+        fh.write(f'arguments="{json.dumps(arguments)}"\n')
 
 
 if __name__ == "__main__":

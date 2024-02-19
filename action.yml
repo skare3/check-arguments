@@ -1,0 +1,18 @@
+name: Parse Arguments
+description: "A Github Action to parse workflow dispatch arguments."
+author: Javier G Gonzalez
+inputs:
+  arguments:
+    description: "Arguments."
+    required: false
+    default: ""
+branding:
+  color: "black"
+  icon: "package"
+
+runs:
+  using: "composite"
+  steps:
+  - name: Show Arguments
+    shell: bash
+    run: echo ${{ inputs.arguments }}

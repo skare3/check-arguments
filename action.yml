@@ -1,11 +1,10 @@
 name: Parse Arguments
-description: "A Github Action to parse workflow dispatch arguments."
+description: "A Github Action to parse workflow-dispatch arguments."
 author: Javier G Gonzalez
 inputs:
   arguments:
     description: "Arguments."
-    required: false
-    default: ""
+    required: true
 branding:
   color: "black"
   icon: "package"
@@ -13,7 +12,7 @@ branding:
 runs:
   using: "composite"
   steps:
-  - name: Show Arguments
+  - name: Parse Arguments
     shell: bash
     run: |
         echo '${{ toJson(github.event.client_payload) }}' > arguments.json

@@ -1,9 +1,11 @@
 import pprint
+import json
 import sys
 
 
 def main():
-    arguments = dict([arg.split(':') for arg in ' '.join((sys.argv[2:-1])).split(',')])
+    with open(sys.argv[1]) as fh:
+        arguments = json.load(fh)
     pprint.pprint(arguments)
 
 

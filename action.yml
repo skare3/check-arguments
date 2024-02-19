@@ -15,4 +15,7 @@ runs:
   steps:
   - name: Show Arguments
     shell: bash
-    run: echo ${{ inputs.arguments }}
+    run: echo ARGUMENTS ${{ inputs.arguments }}
+  - name: Show Arguments
+    shell: bash
+    run: echo ARGUMENTS 2"${{ toJson(github.event.client_payload) }}"

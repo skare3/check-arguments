@@ -42,12 +42,10 @@ def main():
     with open(os.environ["GITHUB_STEP_SUMMARY"], "r+") as fh:
         fh.write("## Arguments:\n")
         for key, value in arguments.items():
-            fh.write(f'- {key}: "{json.dumps(value)}"\n')
+            fh.write(f'- {key}: {json.dumps(value)}\n')
     
     with open(os.environ["GITHUB_OUTPUT"], "r+") as fh:
         fh.write(f'arguments={json.dumps(arguments)}\n')
-        for key, value in arguments.items():
-            fh.write(f'{key}="{json.dumps(value)}"\n')
 
 
 if __name__ == "__main__":

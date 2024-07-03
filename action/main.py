@@ -39,7 +39,7 @@ def main():
                 "true" if str(arguments[name]) in ["true", "True", "1"] else "false"
             )
 
-    with open(os.environ["GITHUB_OUTPUT"], "r+") as fh:
+    with open(os.environ["GITHUB_STEP_SUMMARY"], "r+") as fh:
         fh.write("## Arguments:\n")
         for key, value in arguments.items():
             fh.write(f'- {key}: "{value}"\n')

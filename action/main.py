@@ -40,8 +40,9 @@ def main():
             )
 
     with open(os.environ["GITHUB_OUTPUT"], "r+") as fh:
+        fh.write("## Arguments:\n")
         for key, value in arguments.items():
-            fh.write(f'{key}="{value}"')
+            fh.write(f'- {key}: "{value}"\n')
     
     with open(os.environ["GITHUB_OUTPUT"], "r+") as fh:
         fh.write(f'arguments={json.dumps(arguments)}\n')
